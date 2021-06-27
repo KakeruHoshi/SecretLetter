@@ -16,7 +16,7 @@
   <div class="row row-cols-4 row-cols-md-3 g-4 g-lg-3">
     @foreach ($letters as $letter)
 
-    @if($letter['is_open'] === '1')
+    @if($letter['is_open'] == 1)
     <a href="{{action([LettersController::class, 'show'], $letter->id)}}">
       <div class="card m-3">
         <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg"

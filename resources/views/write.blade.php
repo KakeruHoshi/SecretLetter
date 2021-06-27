@@ -23,14 +23,14 @@
 
     <div>
         <input type="radio" id="open" name="is_open" value="1" checked>
-        <label for="open">公開</label>
+        <label for="open">送る</label>
     </div>
 
     <div>
         <input type="radio" id="close" name="is_open" value="0">
-        <label for="close">非公開</label>
+        <label for="close">送らない</label>
     </div>
-    <button type="submit">登録</button>
+    <button type="submit">手紙を書き終える</button>
 
 </form>
 @endsection

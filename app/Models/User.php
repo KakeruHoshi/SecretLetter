@@ -58,4 +58,14 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    /**
+     * ユーザの手紙を取得
+     *
+     * @return void
+     */
+    public function letters()
+    {
+        return $this->hasMany(Letter::class);
+    }
 }

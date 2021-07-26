@@ -15,14 +15,15 @@ use App\Http\Controllers\LettersController;
 */
 
 Route::get('/', [LettersController::class, 'index']);
+Route::get('/mypage', [LettersController::class, 'mypage']);
 Route::get('/write', [LettersController::class, 'create']);
 Route::get('/{id}', [LettersController::class, 'show']);
+// Route::get('/open', [LettersController::class, 'open']);
 Route::post('/store', [LettersController::class, 'store']);
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
-
-// Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -11,13 +11,12 @@
 
 <div class="container">
   <a href="{{ url('/write') }}">{{ __('新規作成') }}</a>
-  <a href="{{ url('/mypage') }}">{{ __('マイページ') }}</a>
 
   <!-- 手紙一覧 -->
   <div class="card-columns">
       @foreach ($letters as $letter)
 
-      @if($letter['is_open'] == 1)
+      @if($letter['user_id'] == $user_id)
       <a href="{{action([LettersController::class, 'show'], $letter->id)}}">
         <div class="card m-3">
           <div class="card-body">
@@ -26,24 +25,10 @@
           </div>
         </div>
       </a>
+      <button href="{{action([LettersController::class, 'open'], $letter->id)}}">やっぱり送る</button>
       @endif
       @endforeach
   </div>
-  <!-- <div class="row row-cols-2 row-cols-md-3 g-2 g-lg-3">
-    @foreach ($letters as $letter)
-
-    @if($letter['is_open'] == 1)
-    <a href="{{action([LettersController::class, 'show'], $letter->id)}}">
-      <div class="card m-3">
-        <div class="card-body">
-          <h5 class="letter-title">{{$letter->title}}</h5>
-          <p class="letter-text">{{$letter->content}}</p>
-        </div>
-      </div>
-    </a>
-    @endif
-    @endforeach
-  </div> -->
   
 </div>
 
